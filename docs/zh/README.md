@@ -4,9 +4,8 @@
 
 [English](../README.md) | **简体中文** | [日本語](../ja/README.md) | [Türkçe](../tr/README.md)
 
-一个 Android 上基于内核的 root 方案分支SukiSU分叉而来，未添加变更，仅对不受支持的设备做适配。
+一个 Android 上基于内核的 root 方案Kernelsu第三方分支SukiSU分叉而来，未添加变更(后续考虑)，仅对不受支持的设备做适配。
 
-[![官方仓库]([https://github.com/tiann/KernelSU)
 [![协议: GPL v2](https://img.shields.io/badge/License-GPL%20v2-orange.svg?logo=gnu)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 [![GitHub 协议](https://img.shields.io/github/license/tiann/KernelSU?logo=gnu)](/LICENSE)
 

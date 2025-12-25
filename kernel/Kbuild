@@ -34,7 +34,7 @@ MDIR := $(realpath $(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
 
 REPO_OWNER := SukiSU-Ultra
 REPO_NAME := SukiSU-Ultra
-REPO_BRANCH := main
+REPO_BRANCH := main-susfs
 KSU_VERSION_API := 4.1.0
 
 GIT_BIN := /usr/bin/env PATH="$$PATH":/usr/bin:/usr/local/bin git
@@ -123,9 +123,9 @@ $(info -- KERNEL_TYPE: $(KERNEL_TYPE))
 
 # Check if KPM is enabled
 ifeq ($(CONFIG_KPM), y)
-$(info -- KPM is enabled)
+$(info -- KPM=y)
 else
-$(info -- KPM is disabled)
+$(info -- KPM=n)
 endif
 
 # SELinux drivers check

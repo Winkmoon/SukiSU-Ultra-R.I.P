@@ -1,89 +1,88 @@
 # SukiSU Ultra-R.I.P
 
+一个 Android 上基于内核的 root 方案Kernelsu第三方分支SukiSU分叉而来，未添加变更(后续考虑)，仅对不受支持的设备做适配。
 
-[简体中文](./zh/README.md)
-A kernel-based root solution for Android devices, forked from [`tiann/KernelSU`](https://github.com/tiann/KernelSU), and added some interesting changes.
+[![协议: GPL v2](https://img.shields.io/badge/License-GPL%20v2-orange.svg?logo=gnu)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+[![GitHub 协议](https://img.shields.io/github/license/tiann/KernelSU?logo=gnu)](/LICENSE)
 
-[![Channel](https://img.shields.io/badge/Follow-Telegram-blue.svg?logo=telegram)](https://t.me/Sukiksu)
-[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-orange.svg?logo=gnu)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
-[![GitHub License](https://img.shields.io/github/license/tiann/KernelSU?logo=gnu)](/LICENSE)
+## 特性
 
-## Features
+1. 基于内核的 `su` 和权限管理。
+2. 基于 [Magic Mount](https://github.com/5ec1cff/KernelSU) 的模块系统。
+3. [App Profile](https://kernelsu.org/zh_CN/guide/app-profile.html): 把 Root 权限关进笼子里。
+4. 支持 non-GKI 与 GKI 1.0。
+5. KPM 支持
+6. 可调整管理器外观，可自定义 susfs 配置。
 
-1. Kernel-based `su` and root access management
-2. Module system based on [Magic Mount](https://github.com/5ec1cff/KernelSU)
-3. [App Profile](https://kernelsu.org/guide/app-profile.html): Lock up the root power in a cage
-4. Support non-GKI and GKI 1.0
-5. KPM Support
-6. Tweaks to the manager theme and the built-in susfs management tool.
+## 兼容状态
 
-## Compatibility Status
+- KernelSU 官方支持 GKI 2.0 的设备（内核版本 5.10 以上）。
 
-- KernelSU (before v1.0.0) officially supports Android GKI 2.0 devices (kernel 5.10+).
+- 旧内核也是兼容的（最低 4.14+），不过需要自己编译内核。
 
-- Older kernels (4.4+) are also compatible, but the kernel will have to be built manually.
+- 通过更多的反向移植，KernelSU 可以支持 3.x 内核（3.4-3.18）。
 
-- With more backports, KernelSU can supports 3.x kernel (3.4-3.18).
+- 目前支持架构 : `arm64-v8a`、`armeabi-v7a (bare)`、`X86_64`。
 
-- Currently, only `arm64-v8a`, `armeabi-v7a (bare)` and `X86_64`(some) are supported.
+## 安装指导
 
-## Installation
+查看 [`guide/installation.md`](guide/installation.md)
 
-See [`guide/installation.md`](guide/installation.md)
+## 集成指导
 
-## Integration
+查看 [`guide/how-to-integrate.md`](guide/how-to-integrate.md)
 
-See [`guide/how-to-integrate.md`](guide/how-to-integrate.md)
+## 参与翻译
 
-## Translation
+要将 SukiSU 翻译成您的语言，或完善现有的翻译，请使用 [Crowdin](https://crowdin.com/project/SukiSU-Ultra).
 
-If you need to submit a translation for the manager, please go to [Crowdin](https://crowdin.com/project/SukiSU-Ultra).
+## KPM 支持
 
-## KPM Support
+- 基于 KernelPatch 开发，移除了与 KernelSU 重复的功能。
+- 正在进行（WIP）：通过集成附加功能来扩展 APatch 兼容性，以确保跨不同实现的兼容性。
 
-- Based on KernelPatch, we removed features redundant with KSU and retained only KPM support.
-- Work in Progress: Expanding APatch compatibility by integrating additional functions to ensure compatibility across different implementations.
+**开源仓库**: [https://github.com/ShirkNeko/SukiSU_KernelPatch_patch](https://github.com/ShirkNeko/SukiSU_KernelPatch_patch)
 
-**Open-source repository**: [https://github.com/ShirkNeko/SukiSU_KernelPatch_patch](https://github.com/ShirkNeko/SukiSU_KernelPatch_patch)
-
-**KPM template**: [https://github.com/udochina/KPM-Build-Anywhere](https://github.com/udochina/KPM-Build-Anywhere)
+**KPM 模板**: [https://github.com/udochina/KPM-Build-Anywhere](https://github.com/udochina/KPM-Build-Anywhere)
 
 > [!Note]
 >
-> 1. Requires `CONFIG_KPM=y`
-> 2. Non-GKI devices requires `CONFIG_KALLSYMS=y` and `CONFIG_KALLSYMS_ALL=y`
-> 3. For kernels below `4.19`, backporting from `set_memory.h` from `4.19` is required.
+> 1. 需要 `CONFIG_KPM=y`
+> 2. Non-GKI 设备需要 `CONFIG_KALLSYMS=y` and `CONFIG_KALLSYMS_ALL=y`
+> 3. 对于低于 `4.19` 的内核，需要从 `4.19` 的 `set_memory.h` 进行反向移植。
 
-## Troubleshooting
+## 故障排除
 
-1. Device stuck upon manager app uninstallation?
-   Uninstall _com.sony.playmemories.mobile_
+1. 卸载管理器后系统卡住？
+   卸载 _com.sony.playmemories.mobile_
 
-## Sponsor
+## 许可证
 
-- [ShirkNeko](https://afdian.com/a/shirkneko) (maintainer of SukiSU)
-- [weishu](https://github.com/sponsors/tiann) (author of KernelSU)
+**- 此条目暂留，后续会考虑删除此图标，改用官方默认图标或改用新的图标-Winkmoon**
+
+- 目录 `kernel` 下所有文件为 [GPL-2.0-only](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)。
+- 有动漫人物图片表情包的这些文件 `ic_launcher(?!.*alt.*).*` 的图像版权为[怡子曰曰](https://space.bilibili.com/10545509)所有，图像中的知识产权由[明风 OuO](https://space.bilibili.com/274939213)所有，矢量化由 @MiRinChan 完成，在使用这些文件之前，除了必须遵守 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt) 以外，还需要遵守向前两者索要使用这些艺术内容的授权。
+- 除上述文件及目录的其他部分均为 [GPL-3.0-or-later](https://www.gnu.org/licenses/gpl-3.0.html)。
+
+## 赞助
+- [Winkmoon](https://github.com/Winkmoon) (现维护者)
+- [ShirkNeko](https://afdian.com/a/shirkneko) (SukiSU 主要维护者)
+- [weishu](https://github.com/sponsors/tiann) (KernelSU 作者)
 
 
-## License
+## 鸣谢
 
-- The file in the “kernel” directory is under [GPL-2.0-only](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) license.
-- The images of the files `ic_launcher(?!.*alt.*).*` with anime character sticker are copyrighted by [怡子曰曰](https://space.bilibili.com/10545509), the Brand Intellectual Property in the images is owned by [明风 OuO](https://space.bilibili.com/274939213), and the vectorization is done by @MiRinChan. Before using these files, in addition to complying with [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt), you also need to comply with the authorization of the two authors to use these artistic contents.
-- Except for the files or directories mentioned above, all other parts are under [GPL-3.0 or later](https://www.gnu.org/licenses/gpl-3.0.html) license.
-
-## Credit
-
-- [KernelSU](https://github.com/tiann/KernelSU): upstream
-- [MKSU](https://github.com/5ec1cff/KernelSU): Magic Mount
-- [RKSU](https://github.com/rsuntk/KernelsU): support non-GKI
-- [susfs](https://gitlab.com/simonpunk/susfs4ksu): An addon root hiding kernel patches and userspace module for KernelSU.
-- [KernelPatch](https://github.com/bmax121/KernelPatch): KernelPatch is a key part of the APatch implementation of the kernel module
+- [KernelSU](https://github.com/tiann/KernelSU): 上游
+- [MKSU](https://github.com/5ec1cff/KernelSU): 魔法坐骑支持
+- [RKSU](https://github.com/rsuntk/KernelsU): 非GKI 支持
+- [susfs](https://gitlab.com/simonpunk/susfs4ksu): 隐藏内核补丁以及用户空间模组的 KernelSU 附件
+- [KernelPatch](https://github.com/bmax121/KernelPatch): KernelPatch 是内核模块 APatch 实现的关键部分
 
 <details>
-<summary>KernelSU's credit</summary>
+<summary>KernelSU 的鸣谢</summary>
 
-- [Kernel-Assisted Superuser](https://git.zx2c4.com/kernel-assisted-superuser/about/): The KernelSU idea.
-- [Magisk](https://github.com/topjohnwu/Magisk): The powerful root tool.
-- [genuine](https://github.com/brevent/genuine/): APK v2 signature validation.
-- [Diamorphine](https://github.com/m0nad/Diamorphine): Some rootkit skills.
+- [kernel-assisted-superuser](https://git.zx2c4.com/kernel-assisted-superuser/about/)：KernelSU 的灵感。
+- [Magisk](https://github.com/topjohnwu/Magisk)：强大的 root 工具箱。
+- [genuine](https://github.com/brevent/genuine/)：apk v2 签名验证。
+- [Diamorphine](https://github.com/m0nad/Diamorphine)：一些 rootkit 技巧。
 </details>

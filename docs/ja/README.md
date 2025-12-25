@@ -1,4 +1,4 @@
-# SukiSU Ultra
+# SukiSU Ultra-R.I.P
 <img align='right' src='SukiSU-mini.svg' width='220px' alt="sukisu logo">
 
 

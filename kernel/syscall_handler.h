@@ -4,11 +4,6 @@
 #include <linux/version.h>
 #include <linux/sched.h>
 #include <linux/thread_info.h>
-#include <linux/init.h>
-#include <linux/binfmts.h>
-#include <linux/tty.h>
-#include <linux/fs.h>
-#include "selinux/selinux.h"
 
 // Hook manager initialization and cleanup
 void ksu_syscall_hook_manager_init(void);
@@ -26,21 +21,20 @@ int ksu_set_task_mark(pid_t pid, bool mark);
 static inline void ksu_set_task_tracepoint_flag(struct task_struct *t)
 {
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 11, 0)
-    set_task_syscall_work(t, SYSCALL_TRACEPOINT);
+	set_task_syscall_work(t, SYSCALL_TRACEPOINT);
 #else
-    set_tsk_thread_flag(t, TIF_SYSCALL_TRACEPOINT);
+	set_tsk_thread_flag(t, TIF_SYSCALL_TRACEPOINT);
 #endif
 }
 
 static inline void ksu_clear_task_tracepoint_flag(struct task_struct *t)
 {
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 11, 0)
-    clear_task_syscall_work(t, SYSCALL_TRACEPOINT);
+	clear_task_syscall_work(t, SYSCALL_TRACEPOINT);
 #else
-    clear_tsk_thread_flag(t, TIF_SYSCALL_TRACEPOINT);
+	clear_tsk_thread_flag(t, TIF_SYSCALL_TRACEPOINT);
 #endif
 }
 
 void ksu_clear_task_tracepoint_flag_if_needed(struct task_struct *t);
-
 #endif

@@ -20,4 +20,5 @@ obj/
 CLAUDE.md
 .ddk-version
 .vscode/settings.json
-check_symbol
+
+tools/check_symbol

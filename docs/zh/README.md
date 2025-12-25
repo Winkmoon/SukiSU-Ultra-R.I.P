@@ -4,10 +4,9 @@
 
 [English](../README.md) | **简体中文** | [日本語](../ja/README.md) | [Türkçe](../tr/README.md)
 
-一个 Android 上基于内核的 root 方案，由 [`tiann/KernelSU`](https://github.com/tiann/KernelSU) 分叉而来，添加了一些有趣的变更。
+一个 Android 上基于内核的 root 方案分支SukiSU分叉而来，未添加变更，仅对不受支持的设备做适配。
 
-[![最新发行](https://img.shields.io/github/v/release/SukiSU-Ultra/SukiSU-Ultra?label=Release&logo=github)](https://github.com/tiann/KernelSU/releases/latest)
-[![频道](https://img.shields.io/badge/Follow-Telegram-blue.svg?logo=telegram)](https://t.me/Sukiksu)
+[![官方仓库]([https://github.com/tiann/KernelSU)
 [![协议: GPL v2](https://img.shields.io/badge/License-GPL%20v2-orange.svg?logo=gnu)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 [![GitHub 协议](https://img.shields.io/github/license/tiann/KernelSU?logo=gnu)](/LICENSE)
 
@@ -64,30 +63,23 @@
 
 ## 许可证
 
+**- 此条目暂留，后续会考虑删除此图标，改用官方默认图标或改用新的图标-Winkmoon**
+
 - 目录 `kernel` 下所有文件为 [GPL-2.0-only](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)。
 - 有动漫人物图片表情包的这些文件 `ic_launcher(?!.*alt.*).*` 的图像版权为[怡子曰曰](https://space.bilibili.com/10545509)所有，图像中的知识产权由[明风 OuO](https://space.bilibili.com/274939213)所有，矢量化由 @MiRinChan 完成，在使用这些文件之前，除了必须遵守 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt) 以外，还需要遵守向前两者索要使用这些艺术内容的授权。
 - 除上述文件及目录的其他部分均为 [GPL-3.0-or-later](https://www.gnu.org/licenses/gpl-3.0.html)。
 
 ## 赞助
-
+- [Winkmoon](https://github.com/Winkmoon) (现维护者)
 - [ShirkNeko](https://afdian.com/a/shirkneko) (SukiSU 主要维护者)
 - [weishu](https://github.com/sponsors/tiann) (KernelSU 作者)
 
-## ShirkNeko 的赞助列表
-
-- [Ktouls](https://github.com/Ktouls) 非常感谢你给我带来的支持
-- [zaoqi123](https://github.com/zaoqi123) 请我喝奶茶也不错
-- [wswzgdg](https://github.com/wswzgdg) 非常感谢对此项目的支持
-- [yspbwx2010](https://github.com/yspbwx2010) 非常感谢
-- [DARKWWEE](https://github.com/DARKWWEE) 感谢老哥的 100 USDT
-- [Saksham Singla](https://github.com/TypeFlu) 网站的提供以及维护
-- [OukaroMF](https://github.com/OukaroMF) 网站域名捐赠
 
 ## 鸣谢
 
 - [KernelSU](https://github.com/tiann/KernelSU): 上游
 - [MKSU](https://github.com/5ec1cff/KernelSU): 魔法坐骑支持
-- [RKSU](https://github.com/rsuntk/KernelsU): non-GKI 支持
+- [RKSU](https://github.com/rsuntk/KernelsU): 非GKI 支持
 - [susfs](https://gitlab.com/simonpunk/susfs4ksu): 隐藏内核补丁以及用户空间模组的 KernelSU 附件
 - [KernelPatch](https://github.com/bmax121/KernelPatch): KernelPatch 是内核模块 APatch 实现的关键部分
 
